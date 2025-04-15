@@ -1,0 +1,42 @@
+<!-- extends base html into index and others... -->
+{% extends "base.html" %} 
+
+
+<!-- title  -->
+{% block title %}
+  Booking Confirmation
+{% endblock title %}
+
+<!-- contents.. -->
+{% block content %}
+
+{% load static %}
+
+    <div class="container text-center p-3">
+        
+    </div>
+    
+
+    <section class="section hero heroform" style="background-image: url('{% static '/images/hero-bg.png' %}')" aria-label="home">
+        <div class="container">
+      
+          <div class="">
+            
+            <p class="hero-subtitle has-before" data-reveal="left">Make An Appointment</p>
+      
+            <div class="" style="background-image: url('{% static '/images/hero-bg.png' %}');">
+              <br>
+      
+                <div class="alert" role="alert" style="background:white">
+                    <strong>Booking Confirmed!</strong> We have recieve your appointment request, our representative will call you shortly.
+                </div>
+                  
+            </div>
+      
+      
+          </div>
+      
+            
+        </div>
+      </section>
+{% endblock content %}

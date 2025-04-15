@@ -1,0 +1,49 @@
+<!-- extends base html into index and others... -->
+{% extends "base.html" %} 
+
+{% load crispy_forms_tags %}
+
+
+<!-- title  -->
+{% block title %}
+  Appointment
+{% endblock title %}
+
+<!-- contents.. -->
+{% block content %}
+
+{% load static %}
+
+
+<section class="section hero heroform" style="background-image: url('{% static '/images/hero-bg.png' %}')" aria-label="home">
+  <div class="container">
+
+    <div class="">
+      
+      <p class="hero-subtitle has-before" data-reveal="left">Make An Appointment</p>
+
+      <div class="" style="background-image: url('{% static '/images/hero-bg.png' %}');background-color: var(--midnight-green);">
+        <br>
+
+            <div class="form-style-5">
+              <form action="" method="post">
+                {% csrf_token %}
+            
+                  {{ form|crispy }}
+            
+                <button class="btn btn-primary mb-4" type="submit">Submit</button>
+              </form>
+            </div>
+            
+      </div>
+
+
+    </div>
+
+      
+  </div>
+</section>
+  
+  
+  
+{% endblock content %}

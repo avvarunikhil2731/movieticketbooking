@@ -1,0 +1,49 @@
+<!-- extends base html into index and others... -->
+{% extends "base.html" %} 
+
+
+<!-- title  -->
+{% block title %}
+  Services
+{% endblock title %}
+
+<!-- contents.. -->
+{% block content %}
+
+{% load static %}
+
+
+    <!-- #SERVICE --> 
+
+    <section class="service" aria-label="service" style="background-image: url('{% static '/images/hero-bg.png' %}');background-color: var(--midnight-green);">
+      <div class="container">
+
+        <ul class="service-list">
+          {% for d in dept %}
+          <li>
+            <div class="service-card" data-reveal="bottom">
+
+              <div class="card-icon">
+                <img src="{% static '/images/icon-1.png' %}" width="71" height="71" loading="lazy" alt="icon">
+              </div>
+
+              <h3 class="headline-sm card-title">
+                <a href="#">{{ d.dep_name }}</a>
+              </h3>
+
+              <p class="card-text">{{ d.dep_description }}</p>
+
+              <button class="btn-circle" aria-label="read more about psychiatry">
+                <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+              </button>
+
+            </div>
+          </li>
+          {% endfor %}
+
+        </ul>
+
+      </div>
+    </section>
+  
+{% endblock content %}
