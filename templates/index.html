@@ -1,0 +1,43 @@
+<!-- extends base html into index and others... -->
+{% extends "base.html" %} 
+
+
+<!-- title  -->
+{% block title %}
+  rural health care
+{% endblock title %}
+
+<!-- contents.. -->
+{% block content %}
+
+{% load static %}
+  
+<main>
+  <article>
+
+    <!-- #HERO -->
+
+    <section class="section hero" aria-label="home">
+      <div class="container" style="background-color: #f9f9f9; padding: 40px; border-radius: 10px;">
+        <div class="hero-content" style="text-align: center;">
+          <h1 style="font-family: 'Rubik', sans-serif; font-size: 48px; font-weight: 700; color: #333; margin-bottom: 20px;">
+            Rural Health Care Initiative
+          </h1>
+          <p style="font-family: 'Rubik', sans-serif; font-size: 20px; color: #555; line-height: 1.6; max-width: 800px; margin: 0 auto;">
+            The Rural Health Care Initiative aims to provide accessible and affordable healthcare services to rural communities. Our mission is to bridge the gap between urban and rural healthcare by offering quality medical services, advanced treatments, and health education programs. We are committed to improving the well-being of rural populations and ensuring that everyone has access to the care they deserve.
+          </p>
+        </div>
+
+        <figure class="hero-banner" data-reveal="right" style="margin-top: 40px;">
+          <img src="{% static '/images/hero-banner.png' %}" width="590" height="517" loading="eager" alt="hero banner"
+            class="w-100">
+        </figure>
+
+      </div>
+    </section>
+    
+
+    <!-- #ABOUT -->
+</main>
+
+{% endblock content %}

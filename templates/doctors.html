@@ -1,0 +1,53 @@
+<!-- extends base html into index and others... -->
+{% extends "base.html" %} 
+
+
+<!-- title  -->
+{% block title %}
+  Doctors
+{% endblock title %}
+
+<!-- contents.. -->
+{% block content %}
+
+{% load static %}
+
+
+  <!-- #LISTING DOCTORS -->
+
+  <section class="section listing" aria-labelledby="listing-label" style="background-image: url('{% static '/images/hero-bg.png' %}');background-color: var(--midnight-green);">
+    <div class="container">
+
+      <ul class="grid-list">
+
+        <li>
+          <p class="section-subtitle title-lg doctor-listcolor" id="listing-label" data-reveal="left">Doctors Listing</p>
+
+          <h2 class="headline-md doctor-listcolor" data-reveal="left">Browse by specialist</h2>
+        </li>
+
+        {% for d in doctors %}
+        <li>
+          <div class="listing-card doctor-card" data-reveal="bottom">
+
+            <div class="card-icon">
+              <img src="{{ d.doc_image.url }}" width="51" height="51" loading="lazy" alt="icon">
+            </div>
+
+            <div>
+              <h3 class="headline-sm card-title doctor-listcolor">{{ d.doc_specification }}</h3>
+
+              <p class="card-text doctor-listcolor">Dr.{{ d.doc_name }}</p>
+            </div>
+
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+
+    </div>
+  </section>
+
+
+
+{% endblock content %}
